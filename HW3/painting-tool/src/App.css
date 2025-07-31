@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.canvas {
+  flex: 1;
+  border-right: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.side-bar {
+  width: 120px;
+  padding: 10px;
+  border-left: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  border-top: 1px solid #333;
+}
+
+.shape-count {
+  display: flex; align-items: center; gap: 5px;
+}
