@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTMX Task List</title>
+  <script src="/static/htmx.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .task-item { margin-bottom: 0.5rem; }
+    input { margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <h1>HTMX Task List</h1>
+
+  <form 
+    hx-post="/tasks" 
+    hx-target="#task-list" 
+    hx-swap="beforeend"
+    hx-on="afterRequest: this.reset()"
+  >
+    <input name="title" required placeholder="New task">
+    <button type="submit">Add</button>
+  </form>
+
+  <hr>
+
+  <div id="task-list" 
+       hx-get="/tasks" 
+       hx-trigger="load"
+  ></div>
+
+</body>
+</html>
